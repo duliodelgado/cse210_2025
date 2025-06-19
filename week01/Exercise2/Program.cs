@@ -48,16 +48,16 @@ class Program
         // === Step 4: Stretch Challenge - Determine + or - sign ===
         int lastDigit = percentage % 10;
 
-        if (letter != "A" && letter != "F") // A and F don't get + or -
+        if (letter != "F")
         {
-            if (lastDigit >= 7)
-            {
-                sign = "+";
-            }
-            else if (lastDigit < 3)
-            {
-                sign = "-";
-            }
+        if (lastDigit >= 7 && letter != "A")
+        {
+            sign = "+";
+        }
+        else if (lastDigit < 3)
+        {
+            sign = "-";
+        }
         }
 
         // === Step 5: Print the letter grade with the sign ===

@@ -2,31 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-// This class keeps track of all journal entries
 public class Journal
 {
-    public List<Entry> _entries = new List<Entry>();
+    private List<Entry> _entries = new List<Entry>();
 
     public void AddEntry(Entry entry)
     {
         _entries.Add(entry);
     }
 
-    public void DisplayEntries()
+    public void DisplayAll()
     {
-        foreach (Entry e in _entries)
+        foreach (Entry entry in _entries)
         {
-            e.Display();
+            entry.Display();
         }
     }
 
     public void SaveToFile(string filename)
     {
-        using (StreamWriter writer = new StreamWriter(filename))
+        using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            foreach (Entry e in _entries)
+            foreach (Entry entry in _entries)
             {
-                writer.WriteLine($"{e._date}|{e._prompt}|{e._text}");
+                // save everything on one line separated by |
+                outputFile.WriteLine($"{entry._date}|{entry._prompt}|{entry._text}");
             }
         }
     }
@@ -35,14 +35,18 @@ public class Journal
     {
         _entries.Clear();
         string[] lines = File.ReadAllLines(filename);
+
         foreach (string line in lines)
         {
-            string[] parts = line.Split('|');
-            Entry e = new Entry();
-            e._date = parts[0];
-            e._prompt = parts[1];
-            e._text = parts[2];
-            _entries.Add(e);
+            string[] parts = line.Split('|'); // split on |
+            if (parts.Length == 3)
+            {
+                Entry entry = new Entry();
+                entry._date = parts[0];
+                entry._prompt = parts[1];
+                entry._text = parts[2];                                                                             
+                _entries.Add(entry);                                
+            }
         }
     }
-}
+}                                                                                                                       

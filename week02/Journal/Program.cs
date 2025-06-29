@@ -25,8 +25,8 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             
-            string input = Console.ReadLine();
-            choice = int.Parse(input);
+          string input = Console.ReadLine() ?? "0";
+                choice = int.Parse(input);
 
             if (choice == 1)
             {

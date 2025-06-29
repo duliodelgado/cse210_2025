@@ -1,22 +1,33 @@
-// Keeps the Book + Chapter + Verse numbers
-
+// Keeps the Book + Chapter + Verse number
 public class Reference
 {
     private string _book;
     private int _chapter;
-    private int _verse;      // single verse (easy mode)
+    private int _startVerse;
+    private int? _endVerse;     // null → single verse
 
-    // constructor (sets up the reference)
+    // single-verse constructor
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
         _chapter = chapter;
-        _verse = verse;
+        _startVerse = verse;
+        _endVerse = null;
     }
 
-    // show “Book Chapter:Verse”
+    // verse-range constructor
+    public Reference(string book, int chapter, int startVerse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _startVerse = startVerse;
+        _endVerse = endVerse;
+    }
+
     public string GetDisplayText()
     {
-        return $"{_book} {_chapter}:{_verse}";
+        return _endVerse == null
+            ? $"{_book} {_chapter}:{_startVerse}"
+            : $"{_book} {_chapter}:{_startVerse}-{_endVerse}";
     }
 }

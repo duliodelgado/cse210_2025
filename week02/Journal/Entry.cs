@@ -1,11 +1,13 @@
-using System;
+// Entry.cs
+using System;   // ← para Console
 
 public class Entry
 {
-    public string _date;
-    public string _prompt;
-    public string _text;
+    public string _date   { get; set; } = "";
+    public string _prompt { get; set; } = "";
+    public string _text   { get; set; } = "";
 
+    // Muestra la entrada
     public void Display()
     {
         Console.WriteLine($"{_date} - {_prompt}");

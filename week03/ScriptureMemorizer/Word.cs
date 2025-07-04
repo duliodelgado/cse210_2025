@@ -1,5 +1,4 @@
-// Word.cs  – one single word that can hide or show
-// Encapsulation: text is private, other code can’t poke it directly
+// Word.cs – represents ONE word that can hide/show
 public class Word
 {
     private string _text;
@@ -11,15 +10,8 @@ public class Word
         _isHidden = false;
     }
 
-    public void Hide()
-    {
-        _isHidden = true;
-    }
-
-    public bool IsHidden()
-    {
-        return _isHidden;
-    }
+    public void Hide() => _isHidden = true;
+    public bool IsHidden() => _isHidden;
 
     public string GetDisplayText()
     {

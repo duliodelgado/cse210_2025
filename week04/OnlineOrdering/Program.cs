@@ -1,5 +1,5 @@
-// Program.cs – crea dos pedidos y muestra etiquetas + total
-// Autor: Dulio Delgado
+// Program.cs – Create two orders and display labels plus total.
+// Autor: Dulio R. Delgado
 
 using System;                   // << TODOS los using al inicio
 using System.Collections.Generic;
@@ -12,15 +12,15 @@ class Program
         Address addr1 = new Address("123 Elm St", "New York", "NY", "USA");
         Customer cust1 = new Customer("Alice Smith", addr1);
         Order order1 = new Order(cust1);
-        order1.AddProduct(new Product("T-Shirt",  "TS001", 15.00, 2));
-        order1.AddProduct(new Product("Mug",      "MG123",  7.50, 3));
+        order1.AddProduct(new Product("T-Shirt", "TS001", 15.00, 2));
+        order1.AddProduct(new Product("Mug", "MG123", 7.50, 3));
 
         // ---------- Pedido 2 ----------
         Address addr2 = new Address("456 Pine Ave", "Toronto", "ON", "Canada");
         Customer cust2 = new Customer("Bob Johnson", addr2);
         Order order2 = new Order(cust2);
         order2.AddProduct(new Product("Notebook", "NB007", 4.25, 5));
-        order2.AddProduct(new Product("Pen Set",  "PN002", 6.99, 1));
+        order2.AddProduct(new Product("Pen Set", "PN002", 6.99, 1));
 
         // Lista de pedidos
         List<Order> orders = new List<Order> { order1, order2 };

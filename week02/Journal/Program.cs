@@ -1,5 +1,5 @@
 // ----------------------------------------------
-//Journal
+//Week2_Journal
 // Made by Dulio R. Delgado
 // Menu: write / display / save / load / quit
 // ----------------------------------------------

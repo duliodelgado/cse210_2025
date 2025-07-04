@@ -1,4 +1,5 @@
 // ----------------------------------------------
+//Journal
 // Made by Dulio R. Delgado
 // Menu: write / display / save / load / quit
 // ----------------------------------------------
@@ -36,9 +37,9 @@ class Program
                 string response = Console.ReadLine() ?? "";
 
                 Entry entry = new Entry();
-                entry._date   = DateTime.Now.ToShortDateString();
+                entry._date = DateTime.Now.ToShortDateString();
                 entry._prompt = prompt;
-                entry._text   = response;
+                entry._text = response;
 
                 myJournal.AddEntry(entry);
             }

@@ -1,6 +1,7 @@
-// Made by Dulio Delgado
+// ----------------------------------------------
+// Made by Dulio R. Delgado
 // Menu: write / display / save / load / quit
-
+// ----------------------------------------------
 using System;
 
 class Program
